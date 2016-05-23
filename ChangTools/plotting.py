@@ -101,3 +101,13 @@ def quick_hist(arr, nbin=None, range=None, normed=None):
     arr_bin_mid = 0.5 * (arr_bin_edges[:-1] + arr_bin_edges[1:])
     
     return [arr_bin_mid, arr_dist]
+
+def png2pdf(png_filename): 
+    ''' Convert png file to pdf 
+    '''
+    pdf_filename = png_filename.replace('.png', '.pdf')
+
+    convert_cmd = ' '.join(['convert', png_filename, pdf_filename])
+    
+    subprocess.call(convert_cmd.split())
+    return None 
